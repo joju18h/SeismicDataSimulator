@@ -61,6 +61,8 @@ class DataAcquisitionUnit
     struct sigaction action;
 
     //data acquisition unit specific
+    int datacenterno;
+    int blockListno;
 
     //subscribed data centers
     struct DataCenter dataCenters[MAX_CLI];
@@ -72,9 +74,13 @@ class DataAcquisitionUnit
     std::string history[3];
 
 public:
+    DataAcquisitionUnit();
     void* readFunc(void*);
     void* writeFunc(void*);
     int run();
+    void shutdown();
+
+    static DataAcquisitionUnit* instance;
 };
 
 #endif// _DATAACQUISITIONUNIT_H_
