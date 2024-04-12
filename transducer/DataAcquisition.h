@@ -74,6 +74,7 @@ class DataAcquisitionUnit
 public:
     void* readFunc(void*);
     void* writeFunc(void*);
+    int run();
 };
 
 #endif// _DATAACQUISITIONUNIT_H_
